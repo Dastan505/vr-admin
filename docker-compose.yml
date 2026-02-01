@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:16
+    container_name: vr-admin-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: vr_admin
+    ports:
+      - "5432:5432"
+    volumes:
+      - vr_admin_pg:/var/lib/postgresql/data
+volumes:
+  vr_admin_pg:
